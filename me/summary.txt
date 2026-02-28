@@ -1,0 +1,50 @@
+Who Is Cam?
+Cam Dresie is a Group Product Manager with a rare combination of legal expertise and technical depth in AI/ML. He holds a JD and is an active member of the California State Bar, and holds a Master of Computer and Information Technology (MCIT) from the University of Pennsylvania with a focus on artificial intelligence. Before transitioning into product management, Cam worked as a financial litigator, giving him firsthand experience with the workflows, pressures, and needs of legal professionals.
+He lives in Henderson, Nevada.
+
+Current Role
+Cam is a Group Product Manager at Ontra, a Series B legal tech company specializing in AI-powered contract automation for private equity and private credit markets. He leads four product teams responsible for approximately 90% of company revenue and has been a key contributor to scaling the company from $64M to $170M ARR over his tenure.
+His responsibilities span product strategy, roadmap prioritization, cross-functional leadership, and stakeholder alignment across the company's largest product lines. He has also served in an acting GM capacity for the company's flagship product line, adding operational and business ownership to his mandate.
+
+Career History
+Ontra (4+ years) — Cam joined as a PM and progressed through four promotions: PM → Senior PM → Staff PM → Group PM. During this time he:
+* Led development of AI-powered contract markup and automated document redlining tools that reduced negotiation time by 50%
+* Built and scaled products serving private equity fund managers and law firms
+* Developed deep expertise in LLM integration, RAG systems, semantic precedent graphs, and unsupervised clustering in the context of legal document workflows
+Earlier Legal Career — Prior to Ontra, Cam worked as a financial litigator and in legal recruiting, with experience at firms including McInnes Law LLC and Lambda Legal. This background gives him a distinctive ability to understand attorney needs and translate them into product decisions.
+
+Education
+* JD — Active California Bar member
+* MCIT (Master of Computer and Information Technology), AI Focus — University of Pennsylvania
+   * Coursework included system design, machine learning, AI/ML product development, and computer architecture
+   * Projects included building LLM-integrated tools, RAG pipelines, semantic precedent graphs, and unsupervised clustering systems
+
+Technical Interests and Expertise
+Cam is deeply engaged with the technical side of AI and software. His areas of interest and study include:
+* Machine learning and deep learning (Fast.ai, Stanford CS229)
+* Large language model integration and agentic AI workflows
+* Model Context Protocol (MCP) and emerging AI infrastructure
+* Computer hardware, chip architecture, and systems design
+* Graphics and GPU architecture
+He is comfortable discussing AI at both a product and engineering level, and actively keeps up with frontier developments in the field.
+
+Side Projects and Writing
+Stealth Startup — Alongside his work at Ontra, Cam is building a stealth-stage startup in the professional tools space. More details to come as the project develops.
+Beyond the Backlog (Newsletter) — Cam writes a newsletter called "Beyond the Backlog" focused on product craft and AI development. He has published work on topics including human-native AI design, with pieces such as "Beyond the Chat Box: Designing AI Experiences That Actually Fit How People Work."
+
+Areas of Expertise
+* AI product management, particularly in legal tech and enterprise SaaS
+* LLM integration, RAG systems, and agentic AI product design
+* Contract lifecycle management and legal document automation
+* Scaling product organizations and managing multi-team portfolios
+* Bridging legal domain expertise with technical AI development
+* Stakeholder communication and executive-level product strategy
+
+Career Interests
+Cam is open to the right opportunities, particularly Director and Group PM roles at AI-forward companies. He is drawn to legal tech, autonomous vehicles, and cutting-edge AI systems, and gravitates toward organizations where product leaders are expected to engage closely with engineering and research.
+Anyone interested in connecting with Cam professionally is welcome to reach out to him on LinkedIn.
+
+What Makes Cam Unusual
+* He is a licensed attorney who codes. Most PMs have one or the other; very few have both at a serious level.
+* He built AI/ML systems from the ground up during his master's program, giving him a practitioner's perspective on the engineering behind the products he manages.
+* His legal career was not just background — he worked complex financial litigation, which means he understands the actual stakes involved in the legal workflows his products serve.
