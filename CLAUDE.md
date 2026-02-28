@@ -12,13 +12,7 @@ python app.py
 uv tool install 'huggingface_hub[cli]'
 hf auth login --token $HF_TOKEN
 uv run gradio deploy
-
-# Local LLM via Ollama
-ollama serve
-ollama pull llama3.2
 ```
-
-Notebooks are run interactively in Cursor/VSCode using the `.venv` kernel (Python 3.12).
 
 ## Environment Variables
 
@@ -26,10 +20,6 @@ Required and optional keys go in `.env`:
 
 ```
 OPENAI_API_KEY       # Required
-ANTHROPIC_API_KEY    # Claude models
-GOOGLE_API_KEY       # Gemini models
-DEEPSEEK_API_KEY
-GROQ_API_KEY
 PUSHOVER_USER        # Phone push notifications
 PUSHOVER_TOKEN
 HF_TOKEN             # HuggingFace deployment
@@ -37,27 +27,19 @@ HF_TOKEN             # HuggingFace deployment
 
 ## Architecture
 
-This is an educational course on agentic AI, structured as 5 progressive Jupyter notebooks plus a production app.
+**`app.py`** is a RAG-enhanced Gradio chatbot deployed to HuggingFace Spaces. It impersonates Cam Dresie using context from `me/linkedin.pdf`, `me/Cam_Dresie_Resume_2026_GPM.pdf`, `me/summary.txt`, and `portfolio_data/data.json`, plus inline bio/leadership/timeline content and blog posts fetched from an RSS feed.
 
-**`app.py`** is the production artifact — a Gradio chatbot deployed to HuggingFace Spaces that impersonates a person using context from `me/linkedin.pdf` and `me/summary.txt`. It implements the full agentic loop pattern with two tools (`record_user_details`, `record_unknown_question`) and Pushover notifications.
+It uses OpenAI embeddings + FAISS for semantic retrieval and implements the agentic loop pattern with two tools (`record_user_details`, `record_unknown_question`) and Pushover notifications.
 
-**Notebook progression:**
-- `1_lab1.ipynb` — Basic OpenAI API setup
-- `2_lab2.ipynb` — Multi-model comparison across OpenAI, Anthropic, Gemini, DeepSeek, Groq, Ollama
-- `3_lab3.ipynb` — PDF context ingestion, Gradio chat UI, evaluation/retry loop
-- `4_lab4.ipynb` — Tool definition (JSON schema), agentic loop, HuggingFace deployment
-- `5_extra.ipynb` — Agent loop fundamentals with a todo management example
-
-**Core agentic loop pattern** (used in `app.py`, Lab 4, Lab 5):
+**Core agentic loop pattern:**
 ```
 LLM call → check finish_reason
   "tool_calls" → execute tool → append result → loop
   "stop"       → return response to user
 ```
 
-**Evaluation/retry pattern** (Lab 3):
-```
-Generate response → evaluate quality → if fails: add feedback and regenerate
-```
-
-`community_contributions/` contains 150+ student implementations showing alternative providers and approaches — treat as reference, not production code.
+**Key files:**
+- `app.py` — Production chatbot
+- `me/` — Personal documents (LinkedIn PDF, resume, summary)
+- `portfolio_data/data.json` — Portfolio project data
+- `requirements.txt` — Python dependencies
