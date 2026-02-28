@@ -1,0 +1,961 @@
+{
+    "categories": [
+        {
+            "id": "ai",
+            "name": "AI & Machine Learning",
+            "description": "Projects focusing on artificial intelligence and algorithms"
+        },
+        {
+            "id": "passion",
+            "name": "Passion Projects",
+            "description": "Special projects combining hardware and software innovation"
+        },
+        {
+            "id": "web",
+            "name": "Web Development",
+            "description": "Full-stack and frontend web applications"
+        },
+        {
+            "id": "ios",
+            "name": "iOS Development",
+            "description": "Native iOS applications built with Swift"
+        },
+        {
+            "id": "games",
+            "name": "Games & Interactive",
+            "description": "Interactive games and entertainment applications"
+        }
+    ],
+    "projects": [
+        { 
+        "id": "0",
+            "category": "ios",
+        "project_name": "Clima Weather App - iOS",
+        "description": "This project employs the Model View Controller (MVC) design pattern to render a weather app that allows the user to search for various cities for which to get weather, or to push the location button to get weather data for their current location. The app connects to the OpenWeather API to pull accurate weather data, and makes use of the Core Location features in Apple's development kit to pull user location data. The app also has separate dark and light modes, depending on how the user has their device configured. To pass data back and forth between the various view controllers, the delegate design pattern is used.",
+        "technologies": [
+            "Swift",
+            "Model View Controller (MVC)",
+            "Core Location Services",
+            "Delegate Design Pattern",
+            "REST APIs",
+            "Object-Oriented Programming",
+            "Auto Layout",
+            "App Design"
+        ],
+        "github_link": "https://github.com/camdresie/clima-ios",
+        "image_urls": [
+            "./static/images/Clima/ClimaSquare.jpg",
+            "./static/images/Clima/ClimaDark.gif",
+            "./static/images/Clima/ClimaLight.gif"
+        ]
+        },
+        {
+        "id": "1",
+            "category": "passion",
+        "project_name": "Magic Mirror",
+        "description": "This project features a smart mirror that serves up useful data for users. The mirror provides the current time, current weather for my home location, 5-day forecast for my current location, syncs with my Google Calendar to provide upcoming events, has a New York Times RSS feed that pulls the most recent news headlines, and provides encouraging messages that are catered to various times of day (Morning, Afternoon, Evening, or Anytime). The hardware consists of a shadow box which contains a two-way mirror in front of a computer monitor with a Raspberry Pi mounted to the back. The monitor then serves up info through the mirror screen.",
+        "technologies": [
+            "Linux Command Line",
+            "JavaScript",
+            "node.js",
+            "CSS",
+            "API's",
+            "Git",
+            "Raspberry Pi"
+        ],
+        "image_urls": [
+                "./static/images/Magic Mirror/mirror0square.jpg",
+                "./static/images/Magic Mirror/mirror3.jpg",
+                "./static/images/Magic Mirror/mirror1.jpg",
+                "./static/images/Magic Mirror/mirror2.jpg"
+        ]
+        },
+        {
+        "id": "2",
+            "category": "ai",
+        "project_name": "Domino Game AI - Minimax With Alpha-Beta Pruning",
+        "description": "This is a project I did for my AI class at UPenn. This project implements a minimax algorithm with alpha-beta pruning to create an AI that is capable of playing a dominoes game. The game is played by two players, one a human and the other the AI. One player always places dominoes vertically, the other horizontally. The AI allows a player to enter a number to specify how many moves ahead it should search in the minimax tree of possibilities, 1 being the least and 9 the most. If the game looks 9 moves into the future, it is exceedingly hard to beat. It examines all possible outcomes to determine the most optimal play for it, assuming fully optimal play by the human player. If the human player makes an error, it is even easier for the AI to win. Code available on request.",
+        "technologies": [
+            "Python",
+            "Artificial Intelligence",
+            "Minimax Algorithm",
+            "Alpha-Beta Pruning"
+        ],
+        "image_urls": [
+            "./static/images/Minimax/Minimax0Square.png",
+            "./static/images/Minimax/Minimax1.png",
+            "./static/images/Minimax/Minimax2.png",
+            "./static/images/Minimax/Minimax3.png"
+        ]
+        },
+        {
+        "id": "3",
+            "category": "web",
+        "project_name": "Stack Moxie Published Values",
+        "description": "Published Values is a feature I built from the ground up while working with Stack Moxie. I was also involved in wireframing the idea and doing feature research on how best to implement it. Published Values is a feature that allows users of the Stack Moxie testing framework to use a list of values to run test cases against. This is particularly useful in contexts where a value could be any one of a large set of values. Rather than testing against each individual value or entering the values one-by-one, published values allow the user to create lists once and use them multiple times. The feature also connects with a user's Salesforce Global Picklist values, which allows them to test against Salesforce values if they have a connection. In addition, the feature notifies users when Salesforce Global Picklist values have changed, exposing critical information to marketing team members who don't always have Admin access to their company's Salesforce instance, but do rely on the data in global picklists to conduct their daily tasks. New or updated values are intelligently retrieved once per day and cached using Redis.",
+        "technologies": [
+            "Sails.js",
+            "Vue.js",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Bootstrap",
+            "Salesforce API's",
+            "Redis",
+            "ORM",
+            "Database Models"
+        ],
+        "image_urls": [
+            "./static/images/Published Values/pubVals0NewSquare.png",
+            "./static/images/Published Values/pubValsNew1.png",
+            "./static/images/Published Values/pubVals2.png",
+            "./static/images/Published Values/pubVals5.png"
+        ]
+        },
+        { 
+        "id": "4",
+        "category": "ios",
+        "project_name": "Destini Story App - iOS",
+        "description": "This project uses a Model View Controller (MVC) architecture to render a \"Choose Your Own Adventure\" style story. A user is presented with a prompt and then chooses between one of two options. Depending on the option they choose, the story will progress in a different way.",
+        "technologies": [
+            "Swift",
+            "Model View Controller (MVC)",
+            "Storyboarding",
+            "Structs",
+            "Object-Oriented Programming",
+            "Auto Layout",
+            "App Design"
+        ],
+        "github_link": "https://github.com/camdresie/story-app-ios",
+        "image_urls": [
+            "./static/images/destini/DestiniSquare.jpg",
+            "./static/images/destini/DestiniGif.gif"
+        ]
+        },
+        { 
+        "id": "5",
+            "category": "games",
+        "project_name": "MCIT Online Study Smackdown!",
+        "description": "This game pits two students against each other to test their knowledge of various computer science topics! Players begin by entering their names and selecting topics. Then they are fed questions until one of them has gotten five right. They are then taken to a page that displays the winner and further information, as well as giving them an opportunity to play again",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "JavaScript Classes",
+            "Responsive Design"
+        ],
+        "live_link": "https://camdresie.github.io/Hackathon-Project/",
+        "github_link": "https://github.com/camdresie/Hackathon-Project",
+        "image_urls": [
+                "./static/images/MCIT Study Smackdown/study0square.png",
+                "./static/images/MCIT Study Smackdown/study1.PNG",
+                "./static/images/MCIT Study Smackdown/study2.PNG",
+                "./static/images/MCIT Study Smackdown/study3.PNG"
+        ]
+        },
+        { 
+        "id": "6",
+            "category": "ios",
+        "project_name": "BMI Calculator - iOS",
+        "description": "This project employs the Model View Controller (MVC) design pattern to render a BMI Calculator app. The app allows a user to make use of two sliders, corresponding to height and weight. Once they have entered their info, their BMI will be rendered out to the screen. The background color adapts depending on whether the BMI is in the healthy, underweight, or overweight ranges. There is also a piece of advice displayed for the user.",
+        "technologies": [
+            "Swift",
+            "Model View Controller (MVC)",
+            "UI Slider",
+            "Object-Oriented Programming",
+            "Auto Layout",
+            "App Design"
+        ],
+        "github_link": "https://github.com/camdresie/bmi-calculator-ios",
+        "image_urls": [
+            "./static/images/BMI/BMISquare.jpg",
+            "./static/images/BMI/BMI.gif"
+        ]
+        },
+        { 
+        "id": "7",
+        "category": "games",
+        "project_name": "Python Tower Blaster",
+        "description": "This game gives the player a tower that they must order from smallest to largest \"brick\" in numerical order faster than the computer can order its tower. Players can choose to  draw a tile from the top of the draw pile or get a random tile. They then choose which \"brick\" they'd like to replace in their tower. The project is written in Python.",
+        "technologies": [
+            "Python",
+            "Unit Testing",
+            "Algorithm Design"
+        ],
+        "github_link": "https://github.com/camdresie/TowerBlaster",
+        "image_urls": [
+            "./static/images/Tower/tower0square.png",
+            "./static/images/Tower/gameStart.png",
+            "./static/images/Tower/gameMid.png",
+            "./static/images/Tower/gameEnd.png"
+        ]
+        },
+        { 
+        "id": "8",
+        "category": "web",
+        "project_name": "Employee Directory",
+        "description": "This project utilizes a web API to pull data on twelve random employees including their photo, name, birthday, address, city, state, and more for display in an employee directory. The project utilizes JavaScript's fetch() method and promises to make the code more readable and cut down on callback hell. The twelve employees are initially displayed in a gallery-type directory. If an individual employee is clicked on, then a modal tile with more detailed information about that employee is rendered.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "API",
+            "JavaScript Promises",
+            "jQuery"
+        ],
+        "live_link": "https://camdresie.github.io/Employee-Directory-App---Web-API/",
+        "github_link": "https://github.com/camdresie/Employee-Directory-App---Web-API",
+        "image_urls": [
+                "./static/images/Employee Directory/directory0square.jpg",
+                "./static/images/Employee Directory/directory1.JPG",
+                "./static/images/Employee Directory/directory2.JPG",
+                "./static/images/Employee Directory/directory3.JPG"
+        ]
+        },
+        { 
+        "id": "9",
+        "category": "games",
+        "project_name": "Phrase Hunter Game",
+        "description": "This project uses object-oriented vanilla JavaScript to create a hangman-like game. Players use the onscreen keyboard to make their guesses. If a guess is incorrect, the player loses a life (the hearts at the bottom). The player has a total of five tries in which to guess the phrase. If they do not, a losing message is presented and they can restart the game. If they guess the phrase, then a winning message is displayed and they can generate a new random phrase to guess. The data set was generated from a text file containing more than 8,000 common English phrases (and a few of my own). I cleaned the data set to remove expressions that contained punctuation and filtered out inappropriate phrases using Java. Then the data set was imported to this project.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Java",
+            "Object-Oriented Programming"
+        ],
+        "live_link": "https://camdresie.github.io/Phrase-Hunter-Word-Guessing-Game/",
+        "github_link": "https://github.com/camdresie/Phrase-Hunter-Word-Guessing-Game",
+        "image_urls": [
+                "./static/images/Phrase Hunter Game/phrase0square.jpg",
+                "./static/images/Phrase Hunter Game/phrase1.JPG",
+                "./static/images/Phrase Hunter Game/phrase2.JPG",
+                "./static/images/Phrase Hunter Game/phrase3.JPG",
+                "./static/images/Phrase Hunter Game/phrase4.JPG",
+                "./static/images/Phrase Hunter Game/phrase5.JPG"
+        ]
+        },
+        { 
+        "id": "10",
+        "category": "web",
+        "project_name": "Paginated Student List",
+        "description": "For this project, I utilized vanilla JavaScript (no libraries) to create a dynamic pagination system for a list. My code appends a list of links to the bottom of the page that allows a user to navigate through the full list of students 10 at a time. The list is dynamic, so it updates automatically depending on the size of the list input. After completing the initial code mentioned above, I elected to add a search bar function. It is appended to the DOM using vanilla JavaScript. There are two event listeners, one on the search button and one on the search text input field. As a user types, the search function dynamically searches through each name on the list to see if there are any matches. If the user inputs a string of text that matches a user's name in entirety or in part, the function displays that name and hides all others. If no matches are found, a message is displayed telling the user to try another name as no matches were found.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Dynamic Pagination and Searchbar"
+        ],
+        "live_link": "https://camdresie.github.io/List-Pagination-and-Filtering/",
+        "github_link": "https://github.com/camdresie/List-Pagination-and-Filtering",
+        "image_urls": [
+                "./static/images/Paginated Student List/list0square.jpg",
+                "./static/images/Paginated Student List/list1.JPG",
+                "./static/images/Paginated Student List/list2.JPG",
+                "./static/images/Paginated Student List/list3.JPG",
+                "./static/images/Paginated Student List/list4.JPG"
+        ]
+        },
+        {
+        "id": "11",
+        "category": "games",
+        "project_name": "Java Battleship Game",
+        "description": "This project uses Java to render a command-line battleship game that a user can play against a computer. The ships are randomly placed each time and users can enter where they'd like to shoot by entering a pair of coordinates each turn. Sunk ships are represented by an 's', hits are represented by an 'x', spaces that have not been shot at are represented by '.', and misses are represented by '-'.",
+        "technologies": [
+            "Java",
+            "jUnit Testing",
+            "Method Overloading",
+            "Abstract Classes and Methods",
+            "Javadocs"
+        ],
+        "image_urls": [
+                "./static/images/Java Battleship Game/battleship0square.png",
+                "./static/images/Java Battleship Game/battleship1.PNG",
+                "./static/images/Java Battleship Game/battleship2.PNG",
+                "./static/images/Java Battleship Game/battleship3.PNG"
+        ]
+        },
+        { 
+        "id": "12",
+        "category": "ios",
+        "project_name": "Tip Calculator - iOS",
+        "description": "This project employs the Model View Controller (MVC) design pattern to render a tip calculator app. The app prompts a user to enter the total amount of their bill at the top. Then they can select a tip percentage from 0%, 10%, 20%. Then they enter the number of people in their party and the app will pop up a new modal to let them know how much each person needs to pay!",
+        "technologies": [
+            "Swift",
+            "Model View Controller (MVC)",
+            "User Input",
+            "Object-Oriented Programming",
+            "Auto Layout",
+            "App Design"
+        ],
+        "github_link": "https://github.com/camdresie/tipcalculator-ios",
+        "image_urls": [
+            "./static/images/Tipsy/TipsySquare.jpg",
+            "./static/images/Tipsy/Tipsy.gif"
+        ]
+        },
+        {
+        "id": "13",
+        "category": "games",
+        "project_name": "Java Hangman Game",
+        "description": "This project gets dictionary input from a large dictionary file, cleans the input, and then uses those words as the source for the game. The game has two modes, but the user doesn't know which they are playing. Normal hangman mode plays as one would expect, where a user guesses a letter and letters are revealed one at a time until they run out of tries or guess the word. Evil Hangman changes the word each time a player guesses a correct letter to another word with the same letter configuration as the user currently has.",
+        "technologies": [
+            "Java",
+            "jUnit Testing",
+            "Java File I/O",
+            "Abstract Classes and Methods",
+            "Javadocs"
+        ],
+        "image_urls": [
+            "./static/images/Hangman/hangman0square.png",
+            "./static/images/Hangman/start.png",
+            "./static/images/Hangman/midway.png",
+            "./static/images/Hangman/gameEnd.png"
+        ]
+        },
+        { 
+        "id": "14",
+        "category": "games",
+        "project_name": "Connect Four Game",
+        "description": "This project utilizes object-oriented JavaScript to complete a connect four game. In this program, heavy use is made of JavaScript's class constructors to create each aspect of the game (the players, tokens, board, spaces, and game itself). The program is highly modular, with each aspect coded in its own file for high readability. When the game begins, the first player uses the arrow keys to control their token and then drops the token in the slot of their choosing. The game alternates between both players until one has placed four tokens in a row. They are then declared the winner! If both players play all their tokens and there is no winner, a message is displayed. After either ending event, a message is displayed telling the user to refresh the browser to start a new game.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "JavaScript Classes",
+            "jQuery"
+        ],
+        "live_link": "https://camdresie.github.io/Connect-4-Game/",
+        "github_link": "https://github.com/camdresie/Connect-4-Game",
+        "image_urls": [
+                "./static/images/Connect Four Game/connect0square.jpg",
+                "./static/images/Connect Four Game/connect1.JPG",
+                "./static/images/Connect Four Game/connect2.JPG",
+                "./static/images/Connect Four Game/connect3.JPG"
+        ]
+        },
+        {
+        "id": "15",
+        "category": "ios",
+        "project_name": "Dice App - iOS",
+        "description": "This app is perfect for those moments when you need to settle something with the throw of some dice on the go! Or, if you're like me, and lose the dice that come with Yahtzee!, this app will provide a replacement so you can continue to play. The app is written in Swift and makes use of the Main Storyboard for the UI layout and the View Controller to control the display of the dice and the roll button functionality. To use the app, a user simply hits the roll button and random pairs of dice are displayed.",
+        "technologies": [
+            "Swift",
+            "iOS",
+            "xCode",
+            "App Design",
+            "Storyboarding",
+            "Icon Design"
+        ],
+        "github_link": "https://github.com/camdresie/dice-app",
+        "image_urls": [
+            "./static/images/DiceApp/diceApp1.jpeg",
+            "./static/images/DiceApp/diceGif.gif"
+        ]
+        },
+        {
+        "id": "16",
+        "category": "ios",
+        "project_name": "Magic 8 Ball App - iOS",
+        "description": "For those questions that just won't go away, outsource the future to the Magic 8 Ball! The 8 Ball displays different responses to questions when a user taps on the \"ask\" button. The app features a custom launch page and uses xCode Auto Layout to allow the app to run properly no matter which orientation an iOS device is held in.",
+        "technologies": [
+            "Swift",
+            "iOS",
+            "xCode",
+            "App Design",
+            "Auto Layout",
+            "Storyboarding"
+        ],
+        "github_link": "https://github.com/camdresie/magic-8-ball-ios",
+        "image_urls": [
+            "./static/images/8Ball/8BallSquare.jpg",
+            "./static/images/8Ball/8Ball.gif"
+        ]
+        },
+        { 
+        "id": "17",
+        "category": "web",
+        "project_name": "Random Quote Generator",
+        "description": "This project takes in an array of quotes with information pertinent to those quotes (who said it, where they said it, when they said it, and a category for the quote). The function in the program then randomizes the quotes and selects one. As it does this, the background color for the page changes to a random color. If a user doesn't hit the button to get a random quote within ten seconds, the page will automatically select a new random quote.",
+        "technologies": [
+            "HTML", 
+            "CSS", 
+            "JavaScript",
+            "Functional Programming"
+        ],
+        "live_link": "https://camdresie.github.io/Random-Quote-Generator/",
+        "github_link": "https://github.com/camdresie/Random-Quote-Generator",
+        "image_urls": [
+                "./static/images/Random Quote Generator/randomquote0square.jpg",
+                "./static/images/Random Quote Generator/randomquote1.JPG",
+                "./static/images/Random Quote Generator/randomquote2.JPG",
+                "./static/images/Random Quote Generator/randomquote3.JPG"
+            ]
+        },
+        { 
+        "id": "18",
+        "category": "web",
+        "project_name": "Conference Signup Form",
+        "description": "This is a signup form for a fictional conference I completed using vanilla JavaScript. It is a dynamic form that allows users to input various data and receive feedback on what they have entered. If a user does not enter correct data, the form will be prevented from submitting by checking user inputs against RegEx values. The user is then notified of the data that they did not correctly enter through a list of error messages below the submit button and a red border on the section that is incorrect. If the user does not have JavaScript functioning on their browser, the form will still function.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "RegEx",
+            "Responsive Forms"
+        ],
+        "live_link": "https://camdresie.github.io/Form-Validation/",
+        "github_link": "https://github.com/camdresie/Form-Validation",
+        "image_urls": [
+                "./static/images/Conference Signup Form/form0square.jpg",
+                "./static/images/Conference Signup Form/form1.JPG",
+                "./static/images/Conference Signup Form/form2.JPG",
+                "./static/images/Conference Signup Form/form3.JPG",
+                "./static/images/Conference Signup Form/form4.JPG"
+        ]
+        },
+        { 
+        "id": "19",
+        "category": "ios",
+        "project_name": "Quizzler - iOS",
+        "description": "This is a quiz app that uses a Model View Controller (MVC) architecture to run a quiz game. There are several questions and answers to choose from. If a player gets a question right, their score is incremented and the answer is highlighted in green. If they get the question wrong, the question is highlighted in red.",
+        "technologies": [
+            "Swift",
+            "Model View Controller (MVC)",
+            "xCode",
+            "iOS",
+            "Auto Layout",
+            "App Design"
+        ],
+        "github_link": "https://github.com/camdresie/quizzler-ios-app",
+        "image_urls": [
+            "./static/images/quizzler/quizzlerSquare.jpg",
+            "./static/images/quizzler/quizzlerGif.gif"
+        ]
+        },
+        { 
+        "id": "20",
+        "category": "ios",
+        "project_name": "Egg Timer - iOS",
+        "description": "This app allows a user to select the hardness at which they would like their egg cooked from soft, medium, or hard. The app then sets a timer for either 5, 8, or 12 minutes, corresponding to the hardness of the egg. A progress bar at the bottom displays the progression of the timer. When the timer is done, a sound will play.",
+        "technologies": [
+            "Swift",
+            "xCode",
+            "iOS",
+            "Auto Layout",
+            "App Design"
+        ],
+        "github_link": "https://github.com/camdresie/egg-timer-ios",
+        "image_urls": [
+            "./static/images/eggTimer/eggTimerSquare.jpg",
+            "./static/images/eggTimer/eggTimerGif.gif"
+            ]
+        },
+        {
+        "id": "22",
+        "category": "ai",
+        "project_name": "Mixture of Experts: LLM-as-Judge",
+        "description": "A Python/Jupyter implementation of a Mixture of Experts evaluation system where multiple frontier LLMs (GPT, Claude, Gemini, DeepSeek, Llama) each answer a challenging question and then act as judges to rank each other's responses. Final rankings are aggregated by average score across all judges, demonstrating how ensemble evaluation improves over single-judge assessment.",
+        "technologies": [
+            "Python",
+            "Jupyter Notebook",
+            "OpenAI API",
+            "Anthropic API",
+            "Google Gemini API",
+            "DeepSeek API",
+            "Groq API",
+            "Ollama",
+            "Mixture of Experts",
+            "LLM-as-Judge"
+        ],
+        "github_link": "https://github.com/camdresie/Mixture-of-Experts-LLM-as-Judge",
+        "image_urls": [
+            "./static/images/MixtureOfExperts/moe0square.jpg",
+            "./static/images/MixtureOfExperts/moe1.jpg"
+        ]
+        }
+    ],
+    "pmProjects": {
+        "categories": [
+            {
+                "name": "New Product Development",
+                "projects": [
+                    {
+                        "id": "pm-accord",
+                        "project_name": "Accord - Contract Negotiation Platform",
+                        "description": "Led end-to-end development of a revolutionary contract negotiation platform, reducing negotiation time by 40% and improving collaboration between legal teams.",
+                        "timeline": "2024 - 2025",
+                        "role": "Co-Lead Product Manager",
+                        "team": "27 members (14 Engineers, 2 Machine Learning Engineers, 3 Designers, 3 PMs, 2 Legal SMEs, 3 QA)",
+                        "overview": "Accord revolutionizes how legal teams handle contract negotiations by combining AI-powered analysis and editing of contracts with aggregate reporting tools for compliance and tracking.",
+                        "challenge": "Enterprise legal teams at private equity firms were struggling with fragmented tools, manual processes, and lack of visibility into contract negotiations, resulting in delays and increased costs.",
+                        "images": [
+                            {
+                                "url": "./static/images/Accord/accord0square.jpg",
+                                "caption": "Accord Platform Overview"
+                            },
+                            {
+                                "url": "./static/images/Accord/accord1.png",
+                                "caption": "Accord Contract Overview Page"
+                            },
+                            {
+                                "url": "./static/images/Accord/accord2.png",
+                                "caption": "Accord Digital Playbooks"
+                            },
+                            {
+                                "url": "./static/images/Accord/accord3.png",
+                                "caption": "Accord Markup Builder"
+                            },
+                            {
+                                "url": "./static/images/Accord/accord4.png",
+                                "caption": "Accord Contract Summaries"
+                            }
+                        ],
+                        "image_urls": {
+                            "thumbnail": "./static/images/Accord/accord0square.jpg",
+                            "gallery": [
+                                "./static/images/Accord/accord0square.jpg",
+                                "./static/images/Accord/accord1.png"
+                            ]
+                        },
+                        "approach": [
+                            {
+                                "title": "User Research & Discovery",
+                                "description": "Conducted interviews with legal and private equity professionals, analyzed existing workflows, and identified key pain points in contract negotiation processes."
+                            },
+                            {
+                                "title": "Strategy Development",
+                                "description": "Created comprehensive product strategy aligned with both user needs and business objectives, focusing on automation and collaboration features."
+                            },
+                            {
+                                "title": "MVP Development",
+                                "description": "Took a co-development approach, working with 12 of our private equity customers to develop a solution highly-tailored to their needs. Led agile development of core features including AI summarization of contracts and iterations on AI negotiation tools."
+                            }
+                        ],
+                        "outcomes": [
+                            "Reduced contract negotiation time by 67%",
+                            "Decreased new employee onboarding time by 50%",
+                            "Sold first license of new software before launch, evidencing the high demand for our solution."
+                        ],
+                        "technologies": [
+                            "Product Strategy",
+                            "User Research",
+                            "Agile",
+                            "Stakeholder Management",
+                            "Contract Lifecycle Management"
+                        ]
+                    },
+                    {
+                        "id": "pm-trackle",
+                        "project_name": "Trackle - Game Score Tracker",
+                        "description": "Designed and built a comprehensive social gaming platform from concept to deployment, demonstrating end-to-end product development skills from user research through technical implementation.",
+                        "timeline": "2025",
+                        "role": "Solo Product Manager & Engineer",
+                        "team": "1 member (Full-Stack Product Development)",
+                        "overview": "Trackle is a full-stack web application that transforms daily word puzzle gaming into a social, competitive experience. Built specifically for my family's daily gaming ritual, the platform enables users to track scores across popular games like Wordle, Mini Crossword, and Connections, connect with friends, and compete on leaderboards.",
+                        "challenge": "My family plays daily word games but had no centralized way to track progress or compare scores. There was no existing solution that allowed users to track scores across multiple games. I set out to create a platform for users to track their daily scores and get insights about their performance over time.",
+                        "images": [
+                            {
+                                "url": "./static/images/Trackle/trackle0square.png",
+                                "caption": "Trackle"
+                            },
+                            {
+                                "url": "./static/images/Trackle/trackle1.png",
+                                "caption": "Trackle Leaderboard"
+                            },
+                            {
+                                "url": "./static/images/Trackle/trackle2.png",
+                                "caption": "Daily AI Insight into Game Performance"
+                            },
+                            {
+                                "url": "./static/images/Trackle/trackle3.png",
+                                "caption": "Games and Statistics"
+                            }
+                        ],
+                        "image_urls": {
+                            "thumbnail": "./static/images/Trackle/trackle0square.png",
+                            "gallery": [
+                                "./static/images/Trackle/trackle1.png",
+                                "./static/images/Trackle/trackle2.png",
+                                "./static/images/Trackle/trackle3.png"
+                            ]
+                        },
+                        "approach": [
+                            {
+                                "title": "User Research & Product Discovery",
+                                "description": "Interviewed family members to understand their gaming habits, pain points with existing tracking methods, and desired features. Analyzed competitor solutions and identified gaps in the market for simple, social-focused game tracking."
+                            },
+                            {
+                                "title": "Product Strategy & Design",
+                                "description": "Developed comprehensive product strategy focusing on simplicity, social features, and mobile-first design. Created user personas, user journey maps, and wireframes. Prioritized features based on user value and technical complexity."
+                            },
+                            {
+                                "title": "Technical Architecture & Development",
+                                "description": "Built full-stack application using modern AI technologies, including Lovable, Cursor, Claude Code, and OpenAI. Implemented user authentication, real-time data synchronization, and responsive design. Deployed to production with automated CI/CD pipeline."
+                            },
+                            {
+                                "title": "User Testing & Iteration",
+                                "description": "Conducted usability testing with family members, gathered feedback, and iteratively improved the user experience. Implemented analytics to track user engagement and feature adoption."
+                            }
+                        ],
+                        "outcomes": [
+                            "Daily active usage",
+                            "Reduced friction in score sharing from manual texts to one-click shares",
+                            "Users glean insights into performance over time with detailed statistics and leaderboards"
+                        ],
+                        "technologies": [
+                            "Product Strategy",
+                            "User Research",
+                            "React",
+                            "TypeScript",
+                            "Supabase",
+                            "Tailwind CSS",
+                            "PostgreSQL",
+                            "Lovable",
+                            "Claude Code",
+                            "OpenAI",
+                            "Cursor",
+                            "Responsive Design",
+                            "Full-Stack Development",
+                            "CI/CD"
+                        ]
+                    }
+                ]
+            },      
+            {
+                "name": "AI/ML Solutions",
+                "projects": [
+                    {
+                        "id": "pm-ml-taxonomies",
+                        "project_name": "ML Contract Taxonomies",
+                        "description": "Created an intelligent document classification system using machine learning, improving processing accuracy by 75%.",
+                        "timeline": "2022 - 2024",
+                        "role": "Lead Product Manager",
+                        "team": "8 members (3 ML Engineers, 4 SMEs, 1 PM)",
+                        "overview": "Developed a patented methodology for breaking down contracts into the most legally relevant component parts. These taxonomies have gone on to power many parts of the Ontra app, including Digital Playbooks, Markup Builder, and Contract Summaries while providing the necessary framework for conducting robust evaluation of model performance.",
+                        "approach": [
+                            {
+                                "title": "Data Collection and Labeling",
+                                "description": "Developed methodologies with team members to reduce the number of required documents to label in order to aid in model evaluation and ensure accuracy of solutions."
+                            },
+                            {
+                                "title": "Legal Taxonomies",
+                                "description": "Collaborated with legal SMEs to develop detailed contract taxonomies that are used across the Ontra platform."
+                            },
+                            {
+                                "title": "Prompt Engineering",
+                                "description": "Developed process for SMEs to prompt engineer to improve the performance of tools across the Ontra ecosystem."
+                            }
+                        ],
+                        "image_urls": {
+                            "thumbnail": "./static/images/Taxonomies/taxonomy0square.jpg"
+                        },
+                        "outcomes": [
+                            "Wide adoption of taxonomies across the Ontra platform",
+                            "Patent granted for the methodology developed",
+                            "Successfully processed over 1M+ contracts using these taxonomies to aid in contract analysis"                        
+                        ],
+                        "technologies": [
+                            "Machine Learning",
+                            "Generative AI",
+                            "OpenAI",
+                            "Data Labeling",
+                            "Prompt Engineering"
+                        ]
+                    },
+                    {
+                        "id": "pm-openai",
+                        "project_name": "OpenAI Integration",
+                        "description": "Led the integration of OpenAI technologies across product suite, enhancing document analysis and user productivity.",
+                        "timeline": "2023",
+                        "role": "Technical Product Manager",
+                        "team": "6 members (3 Engineers, 1 ML Specialist, 1 Designer, 1 PM)",
+                        "overview": "Integrated OpenAI's GPT models to our product to enhance document analysis, summarization, and content generation capabilities across our product suite.",
+                        "approach": [
+                            {
+                                "title": "Use Case Analysis",
+                                "description": "Identified key opportunities for AI enhancement across products."
+                            },
+                            {
+                                "title": "Hackathon Development",
+                                "description": "Led hackathon to verify the viability of using GPT models to enhance our product."
+                            },
+                            {
+                                "title": "Production Implementation",
+                                "description": "Rolled out AI features across product suite."
+                            }
+                        ],
+                        "image_urls": {
+                            "thumbnail": "./static/images/OpenAI/openai0square.jpg"
+                        },
+                        "outcomes": [
+                            "67% improvement in contract processing speed",
+                            "More than 25x improvement in innovation speed",
+                            "Successful deployment across 4 product lines"
+                        ],
+                        "technologies": [
+                            "OpenAI API",
+                            "GPT Models",
+                            "Stakeholder Alignment"
+                        ]
+                    },
+                    {
+                        "id": "pm-intake-ai",
+                        "project_name": "Intake AI Models",
+                        "description": "Developed a suite of AI models for intelligent document processing, enabling automated classification of document types, processing speed prediction, and project name extraction to streamline the legal document intake process.",
+                        "timeline": "2022",
+                        "role": "Product Manager",
+                        "team": "7 members (1 ML Engineers, 5 Engineers, 1 PM)",
+                        "overview": "Created an intelligent document intake system that uses multiple AI models to automatically classify documents, predict processing requirements, and extract key information, significantly improving the efficiency of our legal network's document processing workflow.",
+                        "approach": [
+                            {
+                                "title": "Model Development",
+                                "description": "Developed and trained three specialized AI models: document type classification, processing speed prediction, and project name extraction."
+                            },
+                            {
+                                "title": "Integration",
+                                "description": "Seamlessly integrated the AI models into the existing document intake workflow to provide real-time processing insights."
+                            },
+                            {
+                                "title": "Performance Optimization",
+                                "description": "Continuously refined models based on feedback from the legal network to improve accuracy and processing speed."
+                            }
+                        ],
+                        "images": [
+                            {
+                                "url": "./static/images/Intake/intake1.jpg",
+                                "caption": "Document Type Classification and Project Name Extraction"
+                            },
+                            {
+                                "url": "./static/images/Intake/intake2.jpg", 
+                                "caption": "Document Type Classification and Rush Classification"
+                            }
+                        ],
+                        "image_urls": {
+                            "thumbnail": "./static/images/Intake/intake0square.jpeg"
+                        },
+                        "outcomes": [
+                            "Automated classification of more than 30 document types with high accuracy",
+                            "Reduced document processing time by predicting resource requirements",
+                            "Improved project organization through automated name extraction",
+                            "Streamlined workflow for legal network"
+                        ],
+                        "technologies": [
+                            "Machine Learning",
+                            "Natural Language Processing",
+                            "Document Classification",
+                            "Information Extraction"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Digital Transformation Tools",
+                "projects": [
+                    {
+                        "id": "pm-contract-summaries",
+                        "project_name": "Contract Summaries & Reporting",
+                        "description": "Developed an AI-powered platform for automated contract analysis and summary generation, reducing review time by 60%.",
+                        "timeline": "2024",
+                        "role": "Lead Product Manager",
+                        "team": "8 members (4 Engineers, 1 UX Designer, 1 PM, 1 ML Engineer, 1 QA)",
+                        "overview": "An intelligent platform that automatically analyzes contracts and extracts fully-customizable key data points, generates comprehensive summaries, and provides actionable insights through customizable reports.",
+                        "images": [
+                            {
+                                "url": "./static/images/Summaries/summaries0square.png",
+                                "caption": "A completed contract summary for an NDA"
+                            },
+                            {
+                                "url": "./static/images/Summaries/summaries1.jpg", 
+                                "caption": "A completed contract summary for a term sheet"
+                            },
+                            {
+                                "url": "./static/images/Summaries/summaries2.jpg",
+                                "caption": "A completed contract summary for a term sheet"
+                            },
+                            {
+                                "url": "./static/images/Summaries/summaries3.png",
+                                "caption": "Accord Markup Builder"
+                            },
+                            {
+                                "url": "./static/images/Summaries/summaries4.jpg",
+                                "caption": "Accord Contract Summaries"
+                            }
+                        ],
+                        "image_urls": {
+                            "thumbnail": "./static/images/Summaries/summaries0square.png",
+                            "gallery": [
+                                "./static/images/Summaries/accord0square.jpg",
+                                "./static/images/Summaries/accord1.png"
+                            ]
+                        },
+                        "approach": [
+                            {
+                                "title": "Product Discovery",
+                                "description": "Analyzed market and customer willingness to pay for new Accord platform and identified that automated summaries were a key offering to enhance perceived value of solution and increase willingness to pay."
+                            },
+                            {
+                                "title": "ML Model Development",
+                                "description": "Collaborated with ML team and legal SMEs to develop processes for creating high-quality starter templates,verifying model outputs, and prompt engineering to enhance performance."
+                            },
+                            {
+                                "title": "UI/UX Design",
+                                "description": "Collaborated with team and UX Designer to create intuitive interfaces for creating summary templates, viewing completed summaries, and managing contract summaries."
+                            }
+                        ],
+                        "outcomes": [
+                            "60% reduction in contract review time for complex agreements",
+                            "Nearly 100% accuracy in automated summary generation for simple agreements",
+                            "85% or greater accuracy in automated summary generation for complex agreements"
+                        ],
+                        "technologies": [
+                            "Machine Learning",
+                            "Generative AI",
+                            "Natural Language Processing",
+                            "Legal Tech"
+                        ]
+                    },
+                    {
+                        "id": "pm-playbooks",
+                        "project_name": "Digital Negotiation Playbooks",
+                        "description": "Created a dynamic platform for digital process documentation and team collaboration, increasing process adoption by 85%.",
+                        "timeline": "2023",
+                        "role": "Product Manager",
+                        "team": "9 members (5 Engineers, 1 Machine Learning Engineer, 1 UX Designer, 1 PM, 1 QA)",
+                        "overview": "Developed an interactive platform for creating, managing, and sharing digital playbooks that guide lawyers through complex contract negotiations. These playbooks also serve as the backing for our AI Playbook Suggestions in the Markup Builder tool.",
+                        "approach": [
+                            {
+                                "title": "User Research",
+                                "description": "Conducted extensive research on requirements for digital playbooks for both legal network members, the customers they serve, and internal teams."
+                            },
+                            {
+                                "title": "Platform Design",
+                                "description": "Created intuitive authoring and viewing experiences for both legal network members and internal teams."
+                            },
+                            {
+                                "title": "Analytics Integration",
+                                "description": "Implemented tracking commonality of positions and how often negotiated outcomes align with playbook preferences."
+                            }
+                        ],
+                        "image_urls": {
+                            "thumbnail": "./static/images/Digital Playbooks/Playbooks.png"
+                        },
+                        "images": [
+                            {
+                                "url": "./static/images/Digital Playbooks/Playbooks.png",
+                                "caption": "Digital Playbooks"
+                            },
+                            {
+                                "url": "./static/images/Digital Playbooks/Playbooks2.jpg",
+                                "caption": "Digital Playbooks Builder"
+                            }
+                        ],
+                        "outcomes": [
+                            "Successful deployment across 100% of accounts",
+                            "Key element in 67% reduction in negotiation time using Markup Builder",
+                            "Significant reduction in time to onboard new team members with codified negotiation preferences."
+                        ],
+                        "technologies": [
+                            "Process Design",
+                            "Aggressive Prioritization",
+                            "Stakeholder Collaboration",
+                            "Collaboration Tools",
+                            "Analytics"
+                        ]
+                    },
+                    {
+                        "id": "pm-markup",
+                        "project_name": "Markup Builder",
+                        "description": "Built an AI-powered markup tool for document review and collaboration that leverages historical precedents to automate contract editing. The tool combines traditional markup capabilities with innovative AI Precedent Suggestions that analyze past edits to automatically suggest and apply relevant changes, streamlining the review process and dramatically reducing negotiation time.",
+                        "timeline": "2024 - 2025",
+                        "role": "Staff Product Manager",
+                        "team": "10 members (5 Engineers, 1 UX Designer, 1 PM, 2 Machine Learning Engineers, 1 QA)",
+                        "overview": "Created a sophisticated yet user-friendly method for utilizing AI to assist in contract editing. Markup Builder's AI Precedent Suggestions feature analyzes historical contract edits to automatically identify and apply relevant changes from similar past negotiations, creating a scalable solution for AI-assisted contract editing that works across any contract type.",
+                        "approach": [
+                            {
+                                "title": "Competitive Analysis",
+                                "description": "Analyzed existing markup tools and identified gaps in the market for AI-assisted contract editing based on negotiated precedent."
+                            },
+                            {
+                                "title": "AI Integration",
+                                "description": "Developed AI Precedent Suggestions using proprietary internal algorithm and OpenAI to analyze historical edits and automatically suggest relevant changes."
+                            },
+                            {
+                                "title": "UX Development",
+                                "description": "Integrated with existing intuitive markup interface that seamlessly integrates AI suggestions with manual editing capabilities."
+                            }
+                        ],
+                        "image_urls": {
+                            "thumbnail": "./static/images/Markup Builder/markupbuilder0square.png"
+                        },
+                        "images": [
+                            {
+                                "url": "./static/images/Markup Builder/markupbuilder0square.png",
+                                "caption": "Markup Builder"
+                            }
+                        ],
+                        "outcomes": [
+                            "67% reduction in time to negotiate routine contracts",
+                            "Created scalable solution for contract editing assistance with AI that scales across any contract type",
+                            "Reduced onboarding requirements by 1000%",
+                            "Reduced time to value from 3 weeks to 1 day"
+                        ],
+                        "technologies": [
+                            "OpenAI",
+                            "Generative AI",
+                            "Search Algorithms",
+                            "User Research"
+                        ]
+                    },
+                    {
+                        "id": "pm-deals",
+                        "project_name": "Deals",
+                        "description": "Developed a centralized document management platform for Private Equity deal teams to organize and access deal-related documents efficiently.",
+                        "timeline": "Q1 2025",
+                        "role": "Staff Product Manager",
+                        "team": "7 members (3 Engineers, 1 Engineering Manager, 1 UX Designer, 1 PM, 1 QA)",
+                        "overview": "Deals is a comprehensive document management solution that enables Private Equity deal team members to group together all documents associated with a specific deal. The platform provides a centralized, easy-to-access repository for NDAs, NRLs, Engagement Letters, and other critical deal documents, streamlining the deal management process and improving team collaboration.",
+                        "approach": [
+                            {
+                                "title": "User Research & Discovery",
+                                "description": "Conducted interviews with Private Equity deal teams to understand their document management pain points and workflow requirements. Identified the need for a centralized system to organize deal-related documents and potential opportunities for expansion pending a successful launch."
+                            },
+                            {
+                                "title": "MVP Implementation",
+                                "description": "Implemented features to group together documents in a week to quickly get user feedback on the tool in-product."
+                            },
+                            {
+                                "title": "Information Architecture",
+                                "description": "Designed an intuitive folder structure and tagging system that allows teams to quickly categorize and retrieve documents by deal, document type, and status. Created flexible methods to add documents to deals that are already on the platform or when adding new documents to the platform."
+                            },
+                            {
+                                "title": "Lifecycle Features",
+                                "description": "Implemented features to tag a deal as open or closed to maintain clean information architecture."
+                            }
+                        ],
+                        "image_urls": {
+                            "thumbnail": "./static/images/Deals/deals0square.png"
+                        },
+                        "images": [
+                            {
+                                "url": "./static/images/Deals/deals0square.png",
+                                "caption": "Deals platform main dashboard"
+                            }
+                        ],
+                        "outcomes": [
+                            "Improved deal team collaboration with centralized document access",
+                            "Created strong base for further development of features to drive network effects",
+                            "Successful adoption across 3+ Private Equity firms within first 2 months"
+                        ],
+                        "technologies": [
+                            "Product Strategy",
+                            "User Research",
+                            "Agile",
+                            "Strategic Development"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
