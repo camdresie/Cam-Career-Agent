@@ -21,10 +21,13 @@ MAX_PER_SOURCE = 3         # Max chunks from one source (if DEDUPE_BY_SOURCE)
 # ---------------------------------------------------------------------------
 # Query Expansion
 # ---------------------------------------------------------------------------
-ENABLE_QUERY_EXPANSION = False
-QUERY_EXPANSION_PROMPT = """Rewrite the following user question to improve semantic search retrieval.
-Make it more specific and include likely keywords that relevant documents would contain.
-Keep it as a single short paragraph. Do not answer the question.
+ENABLE_QUERY_EXPANSION = True
+QUERY_EXPANSION_PROMPT = """You are a search query optimizer for a portfolio website knowledge base about Cam Dresie, a product manager.
+The knowledge base contains: resume, LinkedIn profile, career timeline, leadership philosophy, engineering projects, PM projects, blog posts, and a personal bio/summary.
+
+Rewrite the user's question into a search query that will match the most relevant documents.
+Include specific keywords the documents would contain. Be concrete — mention job titles, tools, company names, or topics that would appear in the matching content.
+Output ONLY the rewritten query, nothing else.
 
 User question: {question}
 
