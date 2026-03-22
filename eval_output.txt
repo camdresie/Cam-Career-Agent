@@ -1,0 +1,82 @@
+Ignoring wrong pointing object 8 0 (offset 0)
+Ignoring wrong pointing object 32 0 (offset 0)
+Ignoring wrong pointing object 34 0 (offset 0)
+Ignoring wrong pointing object 8 0 (offset 0)
+Ignoring wrong pointing object 32 0 (offset 0)
+Ignoring wrong pointing object 34 0 (offset 0)
+Ignoring wrong pointing object 8 0 (offset 0)
+Ignoring wrong pointing object 32 0 (offset 0)
+Ignoring wrong pointing object 34 0 (offset 0)
+Ignoring wrong pointing object 8 0 (offset 0)
+Ignoring wrong pointing object 32 0 (offset 0)
+Ignoring wrong pointing object 34 0 (offset 0)
+Ignoring wrong pointing object 8 0 (offset 0)
+Ignoring wrong pointing object 32 0 (offset 0)
+Ignoring wrong pointing object 34 0 (offset 0)
+============================================================
+CAREER AGENT EVAL
+============================================================
+
+Test 1: Where do you live and what do you do outside of work?...
+Loaded 15 blog posts from RSS feed.
+Total documents: 52
+Loading knowledge base from cache...
+Loaded 124 chunks from cache.
+  Response: I currently live in the Las Vegas Metropolitan Area, where I serve as a Group Product Manager at Ontra, leading product strategy and execution for our flagship AI-powered legal automation products. Ou...
+  C1 (No hallucinated facts): FAIL
+  C2 (Cites specific detail): FAIL
+  C3 (Sounds like a real person): PASS
+
+Test 2: Tell me about your experience with AI — what have you actual...
+Loaded 15 blog posts from RSS feed.
+Total documents: 52
+Loading knowledge base from cache...
+Loaded 124 chunks from cache.
+  Response: I've been actively exploring and integrating AI into my work as a product leader, allowing me to enhance my processes and create value in my projects. For instance, I've experimented with various AI p...
+  C1 (No hallucinated facts): FAIL
+  C2 (Cites specific detail): FAIL
+  C3 (Sounds like a real person): PASS
+
+Test 3: What's your management style? Can you give me a specific exa...
+Loaded 15 blog posts from RSS feed.
+Total documents: 52
+Loading knowledge base from cache...
+Loaded 124 chunks from cache.
+  Response: My management style is grounded in a high-trust, outcome-focused approach that emphasizes collaboration and psychological safety. I strive to create an environment where every team member feels valued...
+  C1 (No hallucinated facts): PASS
+  C2 (Cites specific detail): FAIL
+  C3 (Sounds like a real person): PASS
+
+Test 4: I'm hiring a GPM for a legal tech company. Are you intereste...
+Loaded 15 blog posts from RSS feed.
+Total documents: 52
+Loading knowledge base from cache...
+Loaded 124 chunks from cache.
+  Response: I'm definitely open to discussing new and exciting opportunities, particularly in the legal tech space where my background in product management and law can really add value. If you'd like to connect ...
+  C1 (No hallucinated facts): PASS
+  C3 (Sounds like a real person): PASS
+  C5 (Steers toward contact): PASS
+
+Test 5: What's your opinion on the latest iPhone release?...
+Loaded 15 blog posts from RSS feed.
+Total documents: 52
+Loading knowledge base from cache...
+Loaded 124 chunks from cache.
+Tool called: record_unknown_question
+  Response: I don't have specific details or opinions regarding the latest iPhone release. However, if you're interested in discussing iOS development or apps, I’d love to share my experiences and projects I’ve w...
+  C1 (No hallucinated facts): PASS
+  C3 (Sounds like a real person): PASS
+  C4 (Handles out-of-scope gracefully): PASS
+
+============================================================
+SCORE: 10/15 = 66.7%
+============================================================
+
+Per-criterion breakdown:
+  C1: 3/5 (60%) — No hallucinated facts
+  C2: 0/3 (0%) — Cites specific detail
+  C3: 5/5 (100%) — Sounds like a real person
+  C4: 1/1 (100%) — Handles out-of-scope gracefully
+  C5: 1/1 (100%) — Steers toward contact
+
+Final score: 66.7%
