@@ -39,3 +39,31 @@ ROUND 8: 66.7% (was 66.7%) — REVERTED (no improvement)
 ROUND 9: 60.0% (was 66.7%) — REVERTED (regression)
   C1: 3/5 | C2: 0/3 | C3: 4/5 | C4: 1/1 | C5: 1/1
 
+BASELINE: 53.3%
+  C1: 3/5
+  C2: 0/3
+  C3: 3/5
+  C4: 1/1
+  C5: 1/1
+
+ROUND 1: 60.0% (was 60.0%) — KEPT
+  C1: 3/5 | C2: 0/3 | C3: 4/5 | C4: 1/1 | C5: 1/1
+
+ROUND 2: 66.7% (was 66.7%) — KEPT
+  C1: 3/5 | C2: 0/3 | C3: 5/5 | C4: 1/1 | C5: 1/1
+
+ROUND 3: 66.7% (was 66.7%) — REVERTED (no improvement)
+  C1: 3/5 | C2: 0/3 | C3: 5/5 | C4: 1/1 | C5: 1/1
+
+ROUND 4: 66.7% (was 66.7%) — REVERTED (no improvement)
+  C1: 3/5 | C2: 0/3 | C3: 5/5 | C4: 1/1 | C5: 1/1
+
+ROUND 5: 53.3% (was 66.7%) — REVERTED (regression)
+  C1: 3/5 | C2: 0/3 | C3: 3/5 | C4: 1/1 | C5: 1/1
+
+ROUND 6: 60.0% (was 66.7%) — REVERTED (regression)
+  C1: 3/5 | C2: 0/3 | C3: 4/5 | C4: 1/1 | C5: 1/1
+
+ROUND 7: 66.7% (was 66.7%) — REVERTED (no improvement)
+  C1: 3/5 | C2: 0/3 | C3: 5/5 | C4: 1/1 | C5: 1/1
+
