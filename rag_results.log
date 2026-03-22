@@ -1,0 +1,3 @@
+BASELINE: 84.4%
+  C1: 7/8 (88%) | C2: 8/8 (100%) | C3: 4/8 (50%) | C4: 8/8 (100%)
+  Notes: C3 fails on tests 2,3,5,8 — blog posts dominate. Test 3 also fails C1 (no Project source).

@@ -16,6 +16,12 @@ import numpy as np
 from pypdf import PdfReader
 import faiss
 import gradio as gr
+from rag_config import (
+    CHUNK_SIZE, CHUNK_OVERLAP, REPEAT_TITLE_IN_CHUNKS,
+    TOP_K, MIN_SCORE_THRESHOLD, DEDUPE_BY_SOURCE, MAX_PER_SOURCE,
+    ENABLE_QUERY_EXPANSION, QUERY_EXPANSION_PROMPT,
+    HISTORY_TURNS_FOR_QUERY,
+)
 
 load_dotenv(override=True)
 
@@ -374,8 +380,10 @@ class KnowledgeBase:
         print("Building knowledge base...")
         self.chunks = []
         for doc in documents:
-            text_chunks = chunk_text(doc["text"], chunk_size=400, overlap=80)
+            text_chunks = chunk_text(doc["text"], chunk_size=CHUNK_SIZE, overlap=CHUNK_OVERLAP)
             for chunk in text_chunks:
+                if REPEAT_TITLE_IN_CHUNKS and doc["source"]:
+                    chunk = f"[{doc['source']}] {chunk}"
                 self.chunks.append({"text": chunk, "source": doc["source"]})
 
         if not self.chunks:
@@ -475,16 +483,45 @@ class CareerAgent:
         """Build a context string from the most relevant chunks."""
         # Combine recent conversation context with the current message for better retrieval
         recent_context = ""
-        for msg in history[-4:]:  # Last 2 exchanges
+        for msg in history[-(HISTORY_TURNS_FOR_QUERY * 2):]:
             if msg.get("role") == "user":
                 recent_context += msg["content"] + " "
         query = recent_context + message
 
-        results = self.kb.query(query, top_k=8)
+        # Query expansion: rewrite the query for better embedding matches
+        if ENABLE_QUERY_EXPANSION:
+            try:
+                expansion = self.openai.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=[{"role": "user", "content": QUERY_EXPANSION_PROMPT.format(question=query)}],
+                    max_tokens=100,
+                    temperature=0,
+                )
+                query = expansion.choices[0].message.content.strip()
+            except Exception as e:
+                print(f"Query expansion failed: {e}")
+
+        results = self.kb.query(query, top_k=TOP_K)
+
+        # Filter by minimum score threshold
+        if MIN_SCORE_THRESHOLD > 0:
+            results = [r for r in results if r["score"] >= MIN_SCORE_THRESHOLD]
+
+        # Deduplicate by source to ensure diversity
+        if DEDUPE_BY_SOURCE:
+            source_counts = {}
+            filtered = []
+            for r in results:
+                source_prefix = r["source"].split(":")[0].split(" ")[0] if ":" in r["source"] else r["source"].split(" ")[0]
+                source_counts[source_prefix] = source_counts.get(source_prefix, 0) + 1
+                if source_counts[source_prefix] <= MAX_PER_SOURCE:
+                    filtered.append(r)
+            results = filtered
 
         if not results:
             return "No additional context found."
 
+        # Assemble context with source headers
         context_parts = []
         seen_sources = set()
         for r in results:
