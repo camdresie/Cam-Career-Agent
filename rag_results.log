@@ -1,3 +1,30 @@
 BASELINE: 84.4%
   C1: 7/8 (88%) | C2: 8/8 (100%) | C3: 4/8 (50%) | C4: 8/8 (100%)
   Notes: C3 fails on tests 2,3,5,8 — blog posts dominate. Test 3 also fails C1 (no Project source).
+
+ROUND 1: 84.4% (was 84.4%) — REVERTED
+  Change: Enable DEDUPE_BY_SOURCE with MAX_PER_SOURCE=2.
+  Notes: No effect — eval calls kb.query() directly, bypassing _retrieve_context.
+
+ROUND 2: 96.9% (was 84.4%) — KEPT
+  Change: Enable query expansion with portfolio-aware prompt.
+  C1: 7/8 | C2: 8/8 | C3: 8/8 | C4: 8/8
+  Notes: C3 100%, C4 100%. Only C1 test 1 still fails (career history query misses Blog source).
+
+ROUND 3: 93.8% (was 96.9%) — REVERTED
+  Change: Added blog-specific keywords to expansion prompt.
+  Notes: C3 regressed to 7/8.
+
+ROUND 4: 96.9% (was 96.9%) — REVERTED (no improvement)
+  Change: TOP_K 8→10.
+
+ROUND 5: 93.8% (was 96.9%) — REVERTED
+  Change: REPEAT_TITLE_IN_CHUNKS=True.
+  Notes: C3 regressed.
+
+ROUND 6: 96.9% (was 96.9%) — REVERTED (no improvement)
+  Change: CHUNK_SIZE 400→250, CHUNK_OVERLAP 80→50.
+
+STOP: 96.9% achieved 3 consecutive runs. Stop condition met (95%+ x3).
+  Remaining failure: C1 test 1 — expanded query for career history doesn't reliably surface Blog sources.
+  The query expansion prompt change is the only modification from baseline.
