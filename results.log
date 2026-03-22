@@ -1,0 +1,7 @@
+ROUND 0 (BASELINE): 66.7%
+  C1: 3/5 (60%) | C2: 1/3 (33%) | C3: 4/5 (80%) | C4: 1/1 (100%) | C5: 1/1 (100%)
+
+ROUND 1: 66.7% — REVERTED. Hard facts before context, no-lists rule, banned phrases. C3→100% but C2→0%.
+ROUND 2: 66.7% — REVERTED. Same as R1 but allowed lists. No improvement.
+ROUND 3: 53.3% — REVERTED. Corrections before context, persona rewrite. Score dropped.
+ROUND 4: 66.7% — REVERTED. Overrides after context, worked example, prose-only. C3→100% but C2→0%.
