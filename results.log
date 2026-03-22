@@ -5,3 +5,10 @@ ROUND 1: 66.7% — REVERTED. Hard facts before context, no-lists rule, banned ph
 ROUND 2: 66.7% — REVERTED. Same as R1 but allowed lists. No improvement.
 ROUND 3: 53.3% — REVERTED. Corrections before context, persona rewrite. Score dropped.
 ROUND 4: 66.7% — REVERTED. Overrides after context, worked example, prose-only. C3→100% but C2→0%.
+BASELINE: 53.3%
+  C1: 3/5
+  C2: 0/3
+  C3: 3/5
+  C4: 1/1
+  C5: 1/1
+
