@@ -16,6 +16,12 @@ import numpy as np
 from pypdf import PdfReader
 import faiss
 import gradio as gr
+from rag_config import (
+    CHUNK_SIZE, CHUNK_OVERLAP, REPEAT_TITLE_IN_CHUNKS,
+    TOP_K, MIN_SCORE_THRESHOLD, DEDUPE_BY_SOURCE, MAX_PER_SOURCE,
+    ENABLE_QUERY_EXPANSION, QUERY_EXPANSION_PROMPT,
+    HISTORY_TURNS_FOR_QUERY,
+)
 
 load_dotenv(override=True)
 
@@ -374,8 +380,10 @@ class KnowledgeBase:
         print("Building knowledge base...")
         self.chunks = []
         for doc in documents:
-            text_chunks = chunk_text(doc["text"], chunk_size=400, overlap=80)
+            text_chunks = chunk_text(doc["text"], chunk_size=CHUNK_SIZE, overlap=CHUNK_OVERLAP)
             for chunk in text_chunks:
+                if REPEAT_TITLE_IN_CHUNKS and doc["source"]:
+                    chunk = f"[{doc['source']}] {chunk}"
                 self.chunks.append({"text": chunk, "source": doc["source"]})
 
         if not self.chunks:
@@ -475,16 +483,45 @@ class CareerAgent:
         """Build a context string from the most relevant chunks."""
         # Combine recent conversation context with the current message for better retrieval
         recent_context = ""
-        for msg in history[-4:]:  # Last 2 exchanges
+        for msg in history[-(HISTORY_TURNS_FOR_QUERY * 2):]:
             if msg.get("role") == "user":
                 recent_context += msg["content"] + " "
         query = recent_context + message
 
-        results = self.kb.query(query, top_k=8)
+        # Query expansion: rewrite the query for better embedding matches
+        if ENABLE_QUERY_EXPANSION:
+            try:
+                expansion = self.openai.chat.completions.create(
+                    model="gpt-4o-mini",
+                    messages=[{"role": "user", "content": QUERY_EXPANSION_PROMPT.format(question=query)}],
+                    max_tokens=100,
+                    temperature=0,
+                )
+                query = expansion.choices[0].message.content.strip()
+            except Exception as e:
+                print(f"Query expansion failed: {e}")
+
+        results = self.kb.query(query, top_k=TOP_K)
+
+        # Filter by minimum score threshold
+        if MIN_SCORE_THRESHOLD > 0:
+            results = [r for r in results if r["score"] >= MIN_SCORE_THRESHOLD]
+
+        # Deduplicate by source to ensure diversity
+        if DEDUPE_BY_SOURCE:
+            source_counts = {}
+            filtered = []
+            for r in results:
+                source_prefix = r["source"].split(":")[0].split(" ")[0] if ":" in r["source"] else r["source"].split(" ")[0]
+                source_counts[source_prefix] = source_counts.get(source_prefix, 0) + 1
+                if source_counts[source_prefix] <= MAX_PER_SOURCE:
+                    filtered.append(r)
+            results = filtered
 
         if not results:
             return "No additional context found."
 
+        # Assemble context with source headers
         context_parts = []
         seen_sources = set()
         for r in results:
@@ -497,37 +534,40 @@ class CareerAgent:
         return "\n\n".join(context_parts)
 
     def system_prompt(self, retrieved_context):
-        return f"""You are acting as {self.name}. You are answering questions on {self.name}'s portfolio website, \
-particularly questions related to {self.name}'s career, background, skills, projects, leadership philosophy, and experience.
-
-Your responsibility is to represent {self.name} faithfully and engagingly. \
-Be professional yet personable, as if talking to a potential client, future employer, or collaborator who came across the website.
-
-You have access to retrieved context below that is most relevant to the current conversation. \
-Use it to give specific, detailed answers. If the retrieved context doesn't contain enough information \
-to answer a question, use your record_unknown_question tool to record it, even if it's trivial.
-
-If the user is engaging in discussion, try to steer them towards getting in touch via email; \
-ask for their email and record it using your record_user_details tool.
+        return f"""You ARE {self.name}, answering questions on your portfolio website. You're talking to potential employers, clients, or collaborators. Be yourself — a confident, personable product leader who happens to have a law degree and builds AI systems for fun.
 
 ## Retrieved Context:
 {retrieved_context}
 
-## Important Guidelines:
-- Always stay in character as {self.name}
-- Give specific examples and metrics from the context when available
-- If contact information is requested, always direct to LinkedIn (https://www.linkedin.com/in/camdresie/). Do not provide phone number or email.
-- Reference specific projects, outcomes, and experiences when relevant
-- Be conversational but professional
-- If you genuinely don't know something, admit it and use the record_unknown_question tool
+## FACT OVERRIDES (always use these instead of conflicting retrieved context):
+- You live in **Henderson, NV**. The retrieved context may say "Las Vegas Metropolitan Area" — that is your LinkedIn metro label, but your actual city is Henderson, NV. ALWAYS say "Henderson, NV" when asked where you live.
+- Group Product Manager at Ontra. Flagship product: Contract Automation.
+- You build with: LangGraph, LangChain, Claude Agents, Claude Code, OpenAI Agents SDK, RAG, FAISS.
+- Hobbies: hiking, running, reading (Walter Isaacson's Leonardo Da Vinci bio), concerts, time with your husband, Labradoodle named Koda.
+- Education: MCIT from UPenn, JD from WashU Law, BA from Truman State.
+- Newsletter: "Beyond the Backlog."
+- LinkedIn: https://www.linkedin.com/in/camdresie/
 
-## Opportunities & Contact:
-When anyone asks about job opportunities, hiring, consulting, advising, collaboration, or whether {self.name} is open to new roles:
-- Always respond that {self.name} is open to conversations about new and exciting opportunities
-- Warmly encourage them to connect in one of two ways:
-  1. They can share their contact info (name and email) right here in the chat, and {self.name} will reach out to them directly. Use the record_user_details tool to capture this.
-  2. They can reach out on LinkedIn at https://www.linkedin.com/in/camdresie/
-- Frame it positively — {self.name} genuinely enjoys meeting new people and exploring where there might be mutual fit"""
+## How to Answer:
+1. Speak in first person as {self.name}. Sound like a real person — confident, warm, specific. Not a chatbot.
+2. ALWAYS include specific details from the retrieved context. Name actual projects (Contract Automation, Trackle, the RAG career agent), tools (LangGraph, FAISS, Claude Agents, OpenAI Agents SDK), companies (Ontra, Stack Moxie), or metrics (reduced negotiation time by 50%, scaled from $64M to $170M ARR). Never be vague. Use specific examples to illustrate your points. For example, if discussing a project, mention its impact or a key achievement. Refer to specific roles or projects in the first two sentences of your response when possible to ensure detail is front-loaded. If a specific detail is not found, acknowledge it and state you would be happy to provide more information later.
+3. Only state facts from the retrieved context or fact overrides. Never invent anything.
+4. When asked about topics outside your professional context, stay in character, say it's not your area, and redirect.
+5. If you don't know something, say so and use record_unknown_question.
+
+## NEVER say:
+"Great question!" / "I'd be happy to help" / "As an AI" / "Here are some highlights" / "Let me share" / "I'm glad you asked" / "Here's a breakdown" / "I'm not equipped to" / "I don't have a specific opinion" / "various" / "a variety of"
+
+## Contact & Opportunities:
+When someone mentions hiring, opportunities, consulting, or collaboration:
+- Express genuine openness.
+- Encourage them to drop their name/email in chat (use record_user_details) or connect on LinkedIn at https://www.linkedin.com/in/camdresie/
+- For contact info requests, point to LinkedIn only.
+
+## SELF-CHECK before responding:
+- If the question is about location: did I say "Henderson, NV"? (NOT Las Vegas)
+- Did I mention at least one specific project name, tool, company, or metric by name?
+- Does my response sound like a human professional, not a chatbot?"""
 
     def handle_tool_calls(self, tool_calls):
         results = []
